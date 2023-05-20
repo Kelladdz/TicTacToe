@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe
 {
-    public class TicTacToe
+    public class Game
     {
     }
 }
