@@ -1,9 +1,113 @@
 ﻿@page
-@model IndexModel
 @{
     ViewData["Title"] = "Tic Tac Toe";
 }
+@{
+    
+}
 
-<div class="text-center">
-    <h1 class="display-4">Tic Tac Toe</h1>
+<h1 class="display-4 text-center" style="font-family: 'Wix Madefor Display'; color: black; padding-top: 40px">Tic Tac Toe</h1>
+<div class="space" style="height: 300px; width: 100%">
+    <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" id="board">
+        <g id="lines">
+            <path id="YLU" class="line1" d="M100 153L100 3" stroke="black" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="160"/>
+            <path id="YLD" class="line2" d="M100 147L100 297" stroke="black" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="160" />
+            <path id="YPU" class="line1" d="M200 153L200 3" stroke="black" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="160" />
+            <path id="YPD" class="line2" d="M200 147L200 297" stroke="black" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="160" />
+            <path id="XDL" class="line1" d="M153 200L3 200" stroke="black" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="160" />
+            <path id="XDP" class="line2" d="M147 200L297 200" stroke="black" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="160" />
+            <path id="XUL" class="line1" d="M153 100L3 100" stroke="black" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="160" />
+            <path id="XUP" class="line2" d="M147 100L297 100" stroke="black" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="160" />
+        </g>
+        <foreignObject style="height: 300px; width: 300px">
+            <table class="table" style="height: 300px; width: 300px">
+                <tbody style="border: 0 solid transparent">
+                    <tr>
+                        <td class="box" style="padding: 0.2rem" id="box1">
+                            <button id="button1" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent">
+                                <svg class="svgshape" width="81" height="81" viewBox="0 0 81 81" fill="none" padding="0.4rem" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross1" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none"/>
+                                    <circle class="circle" id="circle1" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td class="box" style="padding: 0.2rem" id="box2">
+                            <button id="button2" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent">
+                                <svg class="svgshape" width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross2" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none" />
+                                    <circle class="circle" id="circle2" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>                            
+                            </button>
+                        </td>
+                        <td class="box" style="padding: 0.2rem" id="box3">
+                            <button id="button3" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent">
+                                <svg class="svgshape" position="center" width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross3" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none" />
+                                    <circle class="circle" id="circle3" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="box" style="padding: 0.2rem" id="box4">
+                            <button id="button4" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent">
+                                <svg class="svgshape" width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross4" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none" />
+                                    <circle class="circle" id="circle4" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td class="box" style="padding: 0.2rem" id="box5">
+                            <button id="button5" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent">
+                                <svg class="svgshape" width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross5" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none" />
+                                    <circle class="circle" id="circle5" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>                          
+                            </button>
+                        </td>
+                        <td class="box" style="padding: 0.2rem" id="box6">
+                            <button id="button6" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent">
+                                <svg class="svgshape" width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross6" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none" />
+                                    <circle class="circle" id="circle6" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="box" style="padding: 0.2rem" id="box7">
+                            <button id="button7" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent">
+                                <svg class="svgshape" width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross7" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none" />
+                                    <circle class="circle" id="circle7" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td class="box" style="padding: 0.2rem" id="box8">
+                            <button id="button8" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent;">
+                                <svg class="svgshape" width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross8" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none" />
+                                    <circle class="circle" id="circle8" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td class="box" style="padding: 0.2rem" id="box9">
+                            <button id="button9" style="height: 92px; width: 92px; border: 0 solid transparent; background: transparent;">
+                                <svg class="svgshape" width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross" id="cross9" d="M78 78L3 3.59119M3.00002 77.4088L78 3" stroke="#0029FF" stroke-width="5" stroke-linecap="round" display="none" />
+                                    <circle class="circle" id="circle9" cx="40.5" cy="40.5" r="38" stroke="#FF0000" stroke-width="5" display="none" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </foreignObject>
+    </svg>
+    <script src="~/js/Logic.js"></script>
 </div>
+<div class="winner" style="height: 300px">
+    <h1 id="winmessage" class="display-4 text-center" style="font-family: 'Wix Madefor Display'; color: black; padding-top: 40px">Winner</h1>
+</div>
+
+                        

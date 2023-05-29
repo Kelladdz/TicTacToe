@@ -1,24 +1,81 @@
-html {
-  font-size: 14px;
+#board {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+svg .line1{
+    stroke-dasharray: 160;
+    stroke-dashoffset: 0;
+    animation: showLine1 0.5s linear forwards;
+}
+svg .line2 {
+    stroke-dasharray: 160;
+    stroke-dashoffset: 0;
+    animation: showLine2 0.5s linear forwards;
+}
+div.table {
+    border-spacing: 6px;
+    position: relative;
+    box-sizing: border-box;
+    border: 0;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.cross{
+    position: absolute;
+    transform-origin: center;
+    transform: scale(0,0);
+    animation: showShape 0.2s linear forwards;
 }
 
-body {
-  margin-bottom: 60px;
+.circle {
+    position: absolute;
+    transform-origin: center;
+    transform: scale(0,0);
+    animation: showShape 0.2s linear forwards;
 }
 
-container {
-  width: 330px;
-  overflow: hidden;
-  margin: 50px auto 0 auto;
+#winmessage{
+    display: none;
 }
+@keyframes showLine1 {
+    0% {
+        stroke-dashoffset: 160;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes showLine2 {
+    0% {
+        stroke-dashoffset: 160;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes showShape {
+    0% {
+        transform: scale(0,0);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes hideShape {
+    0% {
+        transform: scale(1,1);
+    }
+
+    100% {
+        transform: scale(0,0);
+    }
+}
+

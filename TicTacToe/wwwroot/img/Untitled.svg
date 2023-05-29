@@ -1,0 +1,18 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="board" clip-path="url(#clip0_0_1)">
+<rect width="300" height="300" fill="white"/>
+<path id="YLU" d="M100 3L100 153" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="YLD" d="M100 147L100 297" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="YPU" d="M200 3L200 153" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="YPD" d="M200 147L200 297" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="XDL" d="M153 200L3 200" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="XDP" d="M147 200L297 200" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="XUL" d="M153 100L3 100" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="XUP" d="M147 100L297 100" stroke="black" stroke-width="5" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="300" height="300" fill="white"/>
+</clipPath>
+</defs>
+</svg>
