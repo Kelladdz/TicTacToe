@@ -16,11 +16,38 @@ svg .line2 {
     stroke-dashoffset: 0;
     animation: showLine2 0.5s linear forwards;
 }
+
+.who {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+.winshape {
+    position: relative;
+    left: 50%;
+    transform: translate(-41%);
+    padding-top: 40px;
+}
 div.table {
     border-spacing: 6px;
     position: relative;
     box-sizing: border-box;
     border: 0;
+}
+
+#circle10 {
+    position: absolute;
+    transform-origin: center;
+    transform: scale(0,0);
+    animation: showWinShape 0.2s linear forwards;
+}
+
+#cross10 {
+    position: absolute;
+    transform-origin: center;
+    transform: scale(0,0);
+    animation: showWinShape 0.2s linear forwards;
+    padding: 1rem;
 }
 
 .cross{
@@ -76,6 +103,16 @@ div.table {
 
     100% {
         transform: scale(0,0);
+    }
+}
+
+@keyframes showWinShape {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
     }
 }
 

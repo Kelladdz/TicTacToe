@@ -40,7 +40,9 @@ const table = document.querySelector('.table');
 
 const space = document.querySelector('.space');
 const winner = document.querySelector('.winner');
-/*const winMessage = document.querySelector('#winmessage');*/
+
+const circleWin = document.querySelector('#circle10');
+const crossWin = document.querySelector('#cross10');
 
 let Player1Turn = true;
 let Winner = false;
@@ -57,6 +59,13 @@ function shapesDisappear() {
 
 function boardDisappear() {
     shapes.forEach(shape => shape.animate(shapesDissappearing, shapesDissappearingTiming));
+}
+
+function changeDiv() {
+    space.outerHTML = winner;
+    document.querySelector('#winmessage').style.display = "block";
+    if (Player1Turn) document.querySelector('#circle10').style.display = "block";
+    else document.querySelector('#cross10').style.display = "block";
 }
 
 function areYouWinner() {
@@ -80,8 +89,7 @@ function areYouWinner() {
         buttons.forEach(button => button.disabled = "true");
         setTimeout(boardDisappear, 1000);
         setTimeout(shapesDisappear, 1200);
-        space.outerHTML = winner;
-        document.querySelector('#winmessage').style.display = "block";
+        setTimeout(changeDiv, 2000);
         Winner = true;
         if (Player1Turn) {
             console.log("Player 1 win!");
