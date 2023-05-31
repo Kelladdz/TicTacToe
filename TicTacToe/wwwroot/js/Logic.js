@@ -44,6 +44,8 @@ const winner = document.querySelector('.winner');
 const circleWin = document.querySelector('#circle10');
 const crossWin = document.querySelector('#cross10');
 
+const tryAgainButton = document.querySelector('#tryagain');
+
 let Player1Turn = true;
 let Winner = false;
 
@@ -62,8 +64,9 @@ function boardDisappear() {
 }
 
 function changeDiv() {
-    space.outerHTML = winner;
+    space.style.display = "none";
     document.querySelector('#winmessage').style.display = "block";
+    document.querySelector('#tryagain').style.display = "block";
     if (Player1Turn) document.querySelector('#circle10').style.display = "block";
     else document.querySelector('#cross10').style.display = "block";
 }

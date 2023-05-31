@@ -50,6 +50,13 @@ div.table {
     padding: 1rem;
 }
 
+#winmessage {
+    display: none;
+    transform: scale(0,0);
+    animation: showWinShape 0.2s linear forwards;
+    padding-bottom: 40px;
+}
+
 .cross{
     position: absolute;
     transform-origin: center;
@@ -64,8 +71,9 @@ div.table {
     animation: showShape 0.2s linear forwards;
 }
 
-#winmessage{
-    display: none;
+.tryagain {
+    transform-origin: center;
+    margin: auto ;
 }
 @keyframes showLine1 {
     0% {
